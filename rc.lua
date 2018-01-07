@@ -108,9 +108,8 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+                                    { "Terminal", terminal }
+                                  }})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -263,11 +262,11 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-	    cpuwidget,
-	    memwidget,
-	    swpwidget,
+	        cpuwidget,
+	        memwidget,
+	        swpwidget,
             wibox.widget.systray(),
-	    battery.widget,
+	        battery.widget,
             mytextclock,
             s.mylayoutbox,
         },
@@ -602,6 +601,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- Custom autorun crap that probably isn't even necessary.
+-- Yeah, I realize how dumb is it and that it's redundant.
 do
 	local cmds =
  	{
@@ -615,4 +616,3 @@ end
 
 awful.util.spawn_with_shell("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet &)")
 awful.util.spawn_with_shell("~/.config/awesome/locker.sh")
-
