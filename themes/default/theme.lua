@@ -4,7 +4,7 @@
 
 local theme = {}
 
-theme.font          = "Iosevka 10"
+theme.font          = "PragmataPro Regular 10"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
