@@ -126,34 +126,52 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 mytextclock = wibox.widget.textclock(" %a %b, %d  %I:%M %P ")
 
 memorywidget = wibox.widget.progressbar({color = "#000000", background_color = "#ffffff"})
-memwidget = wibox.widget {
-	{
-		max_value     = 1,
-		widget        = memorywidget,
-		color         = "#7f7fff",
-		background_color = beautiful.bg_normal,
-	},
-	forced_height = 100,
-	forced_width  = 20,
-	direction     = 'east',
-	layout        = wibox.container.rotate,
+memwidget = wibox.widget {{
+	    {
+		    max_value     = 1,
+		    widget        = memorywidget,
+		    color         = "#7f7fff",
+		    background_color = beautiful.bg_normal,
+        },
+	    forced_height = 100,
+	    forced_width  = 20,
+	    direction     = 'east',
+        layout        = wibox.container.rotate,
+    },
+    {
+        text = "R",
+        align = 'center',
+        valign = 'center',
+        widget = wibox.widget.textbox,
+    },
+    layout  = wibox.layout.stack,
 }
+
 vicious.cache(memorywidget)
 vicious.register(memorywidget, vicious.widgets.mem, "$1", 13)
 
 swapfilewidget = wibox.widget.progressbar()
-swpwidget = wibox.widget {
-	{
-		max_value	= 1,
-		widget 		= swapfilewidget,
-		color         = "#7f7fff",
-		background_color = beautiful.bg_normal,
-	},
-	forced_height 	= 100,
-	forced_width 	= 20,
-	direction	= 'east',
-	layout		= wibox.container.rotate,
+swpwidget = wibox.widget {{
+    	{
+	    	max_value	= 1,
+	    	widget 		= swapfilewidget,
+	    	color         = "#7f7fff",
+	    	background_color = beautiful.bg_normal,
+	    },
+    	forced_height 	= 100,
+    	forced_width 	= 20,
+    	direction	= 'east',
+        layout		= wibox.container.rotate,
+    },
+    {
+        text = "S",
+        align = 'center',
+        valign = 'center',
+        widget = wibox.widget.textbox,
+    },
+    layout  = wibox.layout.stack,
 }
+
 vicious.cache(swapfilewidget)
 vicious.register(swapfilewidget, vicious.widgets.mem, "$5", 13)
 
