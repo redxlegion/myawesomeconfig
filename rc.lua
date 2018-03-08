@@ -14,6 +14,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local battery_widget = require("battery-widget")
 local battery = battery_widget({adapter = "BAT0"})
 local vicious = require("vicious")
+local APW = require("apw/widget")
 
 
 -- Load Debian menu entries
@@ -62,11 +63,11 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+    awful.layout.suit.tile.top,
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
@@ -284,7 +285,8 @@ awful.screen.connect_for_each_screen(function(s)
 	        memwidget,
 	        swpwidget,
             wibox.widget.systray(),
-	        battery.widget,
+            battery.widget,
+            APW,
             mytextclock,
             s.mylayoutbox,
         },
@@ -528,7 +530,8 @@ awful.rules.rules = {
           "Wpa_gui",
           "pinentry",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "pidgin"},
 
         name = {
           "Event Tester",  -- xev.
