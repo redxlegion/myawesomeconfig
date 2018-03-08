@@ -1,3 +1,9 @@
 [submodule "apw"]
 	path = apw
 	url = http://github.com/actionless/apw
+[submodule "battery-widget"]
+	path = battery-widget
+	url = https://github.com/deficient/battery-widget.git
+[submodule "vicious"]
+	path = vicious
+	url = https://github.com/Mic92/vicious.git
