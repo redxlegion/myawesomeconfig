@@ -531,7 +531,7 @@ awful.rules.rules = {
           "pinentry",
           "veromix",
           "xtightvncviewer",
-          "pidgin"},
+          "Pidgin"},
 
         name = {
           "Event Tester",  -- xev.
